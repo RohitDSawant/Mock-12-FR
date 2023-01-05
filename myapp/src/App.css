@@ -1,0 +1,269 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  overflow: hidden;
+  color: #fff;
+  justify-content: space-evenly;
+  background-color: rgb(68, 131, 194);
+  border: 1px solid silver;
+  padding: 10px 25px;
+}
+
+.navbar > div:nth-child(1) {
+  width: 10%;
+  margin-right: 5%;
+  /* border: 1px solid white; */
+}
+
+.navbar > div:nth-child(2) {
+  width: 45%;
+  gap: 20px;
+  /* border:1px solid; */
+}
+.navbar input {
+  background: white;
+  color: black;
+}
+
+.navbar input::-webkit-search-cancel-button {
+  cursor: pointer;
+}
+
+.navbar button {
+  font-size: 14px;
+  background: none;
+}
+
+.navbar button:hover {
+  background: none;
+  color: yellow;
+}
+
+#cart-btn {
+  font-size: 25px;
+}
+
+form {
+  padding: 2%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-direction: column;
+}
+
+#submit-btn {
+  background-color: rgb(9, 95, 182);
+  color: white;
+}
+#submit-btn:hover {
+  cursor: pointer;
+  background-color: crimson;
+  color: white;
+}
+
+/* ================> Homepage <=================== */
+
+.home-category-btn-div {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  padding-left: 1%;
+  padding-right: 1%;
+  justify-content: space-between;
+  padding-top: 7%;
+  /* border: 1px solid; */
+}
+
+.home-category-btn-div button {
+  padding: 2.2% 2%;
+  display: flex;
+  background: none;
+  gap: 15px;
+  /* border: 1px solid red; */
+}
+
+.home-category-btn-div img {
+  height: 55px;
+}
+
+.home-category-btn-div button:hover {
+  color: red;
+  background: none;
+}
+
+.home-category-btn-div p {
+  font-size: 14px;
+}
+
+.carousel-container {
+  height: 500px;
+  position: relative;
+  width: 97%;
+  margin: auto;
+  /* border:1px solid; */
+  margin-top: 3%;
+}
+
+.carousel-container button:first-child {
+  position: absolute;
+  top: 45%;
+  left: 1%;
+  color: blueviolet;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid silver;
+  border-radius: 50%;
+  padding: 1.7% 1.5%;
+}
+
+.carousel-container img {
+  height: 500px;
+  width: 100vw;
+  display: block;
+  margin: auto;
+}
+
+.carousel-container button:nth-child(2) {
+  position: absolute;
+  top: 42%;
+  color: blueviolet;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid silver;
+  border-radius: 50%;
+  padding: 1.7% 1.5%;
+  right: 1%;
+}
+
+.carousel-container button:first-child:hover,
+.carousel-container button:nth-child(2):hover {
+  background-color: grey;
+  color: #fff;
+}
+
+/* ====================> Fashion Section ============> */
+
+.fashion-section {
+  padding-top: 7%;
+}
+
+/* ======================> Mens Section ==============> */
+
+.mens-section {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid red; */
+  width: 95%;
+  margin: auto;
+  padding-top: 10%;
+}
+
+.mens-section > div:first-child {
+  /* border: 1px solid blue; */
+  padding: 2%;
+  width: 15%;
+}
+
+.mens-section > div:nth-child(2) {
+  /* border: 1px solid blue; */
+  overflow: scroll;
+  height: 80vh;
+  /* padding: 2%; */
+  width: 82%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  /* height: 75vh; */
+}
+
+/* personal scrollbar */
+
+/* .mens-section > div:nth-child(2)::-webkit-scrollbar-track{
+} */
+
+.mens-section > div:nth-child(2)::-webkit-scrollbar{
+  display: none;
+}
+
+
+.pagination-div {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin: auto;
+  border: 1px solid;
+}
+
+.pagination-page-button {
+  border: 1px solid silver;
+  padding: 5px 10px;
+}
+
+/* =============> Fashion Card  ===================> */
+
+.fashion-card {
+  border: 1px solid silver;
+  padding: 5%;
+  border-radius: 5px;
+  line-height: 25px;
+}
+
+.fashion-card > img{
+  height: 175px;
+  width: 65%;
+  display: block;
+  margin: auto;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.Prodbrand{
+  font-size: 13px;
+  color: rgb(188, 14, 63);
+  font-weight: 600;
+  font-size: 300;
+}
+
+.Prodname{
+  font-size: 16px;
+  line-height: normal;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.Proddisc{
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(5, 108, 5)
+}
+
+.Prodmrp{
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+
+.fashion-card > div{
+  margin-bottom: 10px;
+}
+
+.Prodprice{
+  font-size: 22px;
+  font-weight: 700;
+}
+
+#atc{
+  background-color: rgb(68, 131, 194);
+  color: #fff;
+}
+
+#atc:hover{
+  background-color: #fff;
+  color:rgb(68, 131, 194);
+}
