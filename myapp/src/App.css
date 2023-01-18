@@ -187,33 +187,31 @@ form {
 /* .mens-section > div:nth-child(2)::-webkit-scrollbar-track{
 } */
 
-.mens-section > div:nth-child(2)::-webkit-scrollbar{
+.mens-section > div:nth-child(2)::-webkit-scrollbar {
   display: none;
 }
 
-.mens-section-child-a > div:first-child{
-  border: 1px solid; 
+.mens-section-child-a > div:first-child {
+  border: 1px solid;
   border-radius: 2px;
   background-color: rgb(248, 247, 247);
   padding: 5%;
 }
 
-.mens-section-child-a > div:first-child  > div:first-child{
+.mens-section-child-a > div:first-child > div:first-child {
   border: none;
   border-radius: 2px;
-  background: rgb(68, 131, 194); 
+  background: rgb(68, 131, 194);
   color: #fff;
   padding: 3% 5%;
-
 }
 
-.mens-section-child-a > div:first-child  > div{
+.mens-section-child-a > div:first-child > div {
   /* border: 1px solid blue; */
   display: flex;
   gap: 10px;
 }
 /*  ============> Pagination ============> */
-
 
 .pagination-div {
   display: flex;
@@ -237,7 +235,7 @@ form {
   line-height: 25px;
 }
 
-.fashion-card > img{
+.fashion-card > img {
   height: 200px;
   width: 65%;
   display: block;
@@ -246,47 +244,79 @@ form {
   margin-bottom: 20px;
 }
 
-.Prodbrand{
+.Prodbrand {
   font-size: 13px;
   color: rgb(188, 14, 63);
   font-weight: 600;
   font-size: 300;
 }
 
-.Prodname{
+.Prodname {
   font-size: 15px;
   line-height: normal;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
-.Proddisc{
+.Proddisc {
   font-size: 12px;
   font-weight: 600;
-  color: rgb(5, 108, 5)
+  color: rgb(5, 108, 5);
 }
 
-.Prodmrp{
+.Prodmrp {
   font-size: 16px;
   font-weight: 600;
   text-decoration: line-through;
 }
 
-.fashion-card > div{
+.fashion-card > div {
   margin-bottom: 10px;
 }
 
-.Prodprice{
+.Prodprice {
   font-size: 22px;
   font-weight: 700;
 }
 
-#atc{
+#atc {
   background-color: rgb(68, 131, 194);
   color: #fff;
 }
 
-#atc:hover{
+#atc:hover {
   background-color: #fff;
-  color:rgb(68, 131, 194);
+  color: rgb(68, 131, 194);
+}
+
+/* multi_product_carousel_prod */
+
+.multi_product_carousel {
+  border: 1px solid red;
+  padding: 5% 2%;
+}
+
+.multi_product_carousel_prod {
+  padding: 7% 5%;
+  margin-left: 5%;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+
+.multi_product_carousel_prod img {
+  height: 200px;
+  width: 95%;
+  margin: auto;
+  display: block;
+}
+
+.multi_product_carousel_prod > div:nth-child(2) > p:nth-child(1) {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: 2%;
+}
+.multi_product_carousel_prod > div:nth-child(2) > p:nth-child(2) {
+  font-size: 12px;
+  font-weight: bold;
 }
