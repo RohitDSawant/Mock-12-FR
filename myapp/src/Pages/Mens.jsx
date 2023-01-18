@@ -1,4 +1,4 @@
-import { Box, Select } from "@chakra-ui/react";
+import { Box, Heading, Select, Text } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
@@ -13,11 +13,24 @@ const Mens = () => {
   const [mensData, setMensData] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  console.log(current_path);
+  const [sortValue, setSortValue] = useState(false)
+  // const [sortParams, setSortParams] = useState("")
+  // const [isLoading, setIsLoading] = useState(false)
+
+
+// =========> Page Handler Callback function
 
   const handleChange = (value) => {
     setCurrentPage(value);
-  };
+  }
+
+
+//  ======> HandleSorting
+
+const handleSorting = (e) => {
+
+}
+
 
   useEffect(() => {
     axios
@@ -34,59 +47,61 @@ const Mens = () => {
         `https://mybasket.onrender.com/category/${current_path}?page=${currentPage}&limit=${40}`
       )
       .then((res) => {
-        // console.log(res.data);
+        console.log(res.data);
         setMensData(res.data);
       });
   }, [current_path, currentPage]);
 
-  console.log(currentPage);
+  // console.log(currentPage);
+console.log(sortValue);
+
 
   return (
     <div>
       <Box className="mens-section">
-        <Box>
+        <Box className="mens-section-child-a">
+          <Box>
             <Box>
-              <label htmlFor="">
-                <Select>
-                  <option value="">Sort By Price</option>
-                  <option value="HTL">From:High to Low</option>
-                  <option value="LTH">From:Low to High</option>
-                </Select>
-              </label>
-              <br />
-              <label htmlFor="">
-                <Select>
-                  <option value="">Filter By Brand</option>
-                  <option value="">ABC</option>
-                  <option value="">XYZ</option>
-                </Select>
-              </label>
+              <Heading as={"h3"} size="sm">
+                Sort By:
+              </Heading>
             </Box>
+            <br />
+            <Box>
+              <input onChange={()=>{setSortValue(!sortValue)}} name="sortValues"  type="radio" />
+              <Text>Price High to Low</Text>
+            </Box>
+            <Box>
+              <input onChange={()=>{setSortValue(!sortValue)}} name="sortValues" type="radio" />
+              <Text>Price Low to High</Text>
+            </Box>
+          </Box>
         </Box>
 
         <Box>
-          {mensData.length > 0 && mensData.map((ele)=>{
-            return(
-              <Box key={ele._id} >
-                <FashionProductCard 
-                image={ele.item_img} 
-                brand={ele.item_brand}
-                name={ele.item_name}
-                price={ele.item_disc_price}
-                id= {ele._id}
-                discount={ele.discount}
-                mrp= {ele.item_mrp}
-                />
-              </Box>
-            )
-          })}
+          {mensData.length > 0 &&
+            mensData.map((ele) => {
+              return (
+                <Box key={ele._id} >
+                  <FashionProductCard
+                    image={ele.item_img}
+                    brand={ele.item_brand}
+                    name={ele.item_name}
+                    price={ele.item_disc_price}
+                    id={ele._id}
+                    discount={ele.discount}
+                    mrp={ele.item_mrp}
+                  />
+                </Box>
+              );
+            })}
         </Box>
 
         <br />
       </Box>
       <br />
-        <Pagination total={totalPages} handleChange={handleChange} />
-        <SkeletonFashionProduct/>
+      <Pagination total={totalPages} handleChangefun={handleChange} />
+      {/* <SkeletonFashionProduct /> */}
     </div>
   );
 };

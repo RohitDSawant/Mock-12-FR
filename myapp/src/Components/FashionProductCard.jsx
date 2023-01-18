@@ -17,7 +17,7 @@ const FashionProductCard = (props) => {
       </Box>
       <hr  />
       <Box marginTop={"15px"} display={"flex"} gap={"30px"} alignItems={"center"}>
-        <Button display={"flex"} gap={"10px"} id="atc" onClick={"props.id"}><Text>ADD TO CART</Text> <i class="fa-solid fa-cart-arrow-down"></i></Button>
+        <Button display={"flex"} gap={"10px"} id="atc" ><Text>ADD TO CART</Text> <i class="fa-solid fa-cart-arrow-down"></i></Button>
         <Text className="Prodprice" as={"p"}>₹ {props.price}</Text>
       </Box>
     </div>

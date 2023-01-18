@@ -5,26 +5,22 @@ function paginationArray(total) {
   return new Array(total).fill(0);
 }
 
-const Pagination = ({ total, handleChange }) => {
+const Pagination = ({ total, handleChangefun }) => {
   let pages = paginationArray(total).map((ele, index) => {
-    return <button></button>;
+    return (
+      <button
+        className="pagination-page-button"
+        onClick={() => handleChangefun(index + 1)}
+      >
+        {index + 1}
+      </button>
+    );
   });
   // console.log(total)
-  console.log(pages);
+  // console.log(pages);
   return (
     <Box className="pagination-div">
-      {pages.map((ele, index) => {
-        return (
-         <div key={index}>
-             <Button
-            className="pagination-page-button"
-            onClick={() => handleChange(index + 1)}
-          >
-            {index + 1}
-          </Button>
-         </div>
-        );
-      })}
+      {pages}
     </Box>
   );
 };

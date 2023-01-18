@@ -49,6 +49,7 @@ const HomeII = () => {
       console.log(res.data)
     })
   },[])
+  
 
 
   return (
@@ -65,11 +66,11 @@ const HomeII = () => {
       {/* fashion ===> caraousel */}
       <br />
       <Box>
-        <Carousel>
+        <Carousel  slidesToShow={10}>
           {mensData && mensData.map((item)=>{
               return (
                 <Box>
-                    <img src="" alt="" />
+                    <img src={item.item_img} alt="" />
                     <Heading size={"sm"}></Heading>
                     <Box display={"flex"} gap={"10px"}>
                       <b>Discount price: </b>

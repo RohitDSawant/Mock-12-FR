@@ -159,15 +159,15 @@ form {
   display: flex;
   justify-content: space-between;
   /* border: 1px solid red; */
-  width: 95%;
+  width: 98%;
   margin: auto;
   padding-top: 10%;
 }
 
-.mens-section > div:first-child {
+.mens-section-child-a {
   /* border: 1px solid blue; */
   padding: 2%;
-  width: 15%;
+  width: 18%;
 }
 
 .mens-section > div:nth-child(2) {
@@ -190,6 +190,29 @@ form {
 .mens-section > div:nth-child(2)::-webkit-scrollbar{
   display: none;
 }
+
+.mens-section-child-a > div:first-child{
+  border: 1px solid; 
+  border-radius: 2px;
+  background-color: rgb(248, 247, 247);
+  padding: 5%;
+}
+
+.mens-section-child-a > div:first-child  > div:first-child{
+  border: none;
+  border-radius: 2px;
+  background: rgb(68, 131, 194); 
+  color: #fff;
+  padding: 3% 5%;
+
+}
+
+.mens-section-child-a > div:first-child  > div{
+  /* border: 1px solid blue; */
+  display: flex;
+  gap: 10px;
+}
+/*  ============> Pagination ============> */
 
 
 .pagination-div {
@@ -215,7 +238,7 @@ form {
 }
 
 .fashion-card > img{
-  height: 175px;
+  height: 200px;
   width: 65%;
   display: block;
   margin: auto;
@@ -231,7 +254,7 @@ form {
 }
 
 .Prodname{
-  font-size: 16px;
+  font-size: 15px;
   line-height: normal;
   font-weight: 600;
   margin-bottom: 5px;
