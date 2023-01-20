@@ -5,7 +5,9 @@ import Grocery from "../Pages/Grocery";
 import HomePage from "../Pages/HomePage";
 import LoginPage from "../Pages/LoginPage";
 import Mens from "../Pages/Mens";
+import Mobiles from "../Pages/Mobiles";
 import SignupPage from "../Pages/SignupPage";
+import Womens from "../Pages/Womens";
 
 const AllRoutes = () => {
   return (
@@ -20,10 +22,10 @@ const AllRoutes = () => {
         <Route path="/category/tv&appliances" />
         <Route path="/category/beauty" />
         <Route path="/category/grocery" element={<Grocery />} />
-        <Route path="/category/mobiles&tablets" />
+        <Route path="/category/mobiles" element={ <Mobiles/>}/>
         <Route path="/category/fashion" element={<Fashions/>}/>
-        <Route path="/category/fashion/mens" element={<Mens />} />
-        <Route path="/category/" />
+        <Route path="/category/mens" element={<Mens />} />
+        <Route path="/category/womens" element={<Womens/>} />
       </Routes>
     </div>
   );

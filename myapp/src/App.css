@@ -245,21 +245,22 @@ form {
 }
 
 .Prodbrand {
-  font-size: 13px;
+  font-size: 9px;
   color: rgb(188, 14, 63);
   font-weight: 600;
   font-size: 300;
 }
 
 .Prodname {
-  font-size: 15px;
+  font-size: 12px;
   line-height: normal;
+  width: 80%;
   font-weight: 600;
   margin-bottom: 5px;
 }
 
 .Proddisc {
-  font-size: 12px;
+  font-size: 9px;
   font-weight: 600;
   color: rgb(5, 108, 5);
 }

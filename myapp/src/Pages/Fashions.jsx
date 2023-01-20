@@ -6,11 +6,11 @@ const Fashions = () => {
   return (
     <div>
       <Box className="fashion-section">
-        <Link to={"/category/fashion/mens"}>MENS</Link>
+        <Link to={"/category/mens"}>MENS</Link>
         <br />
-        <Link to={"/category/fashion/women"}>WOMENS</Link>
+        <Link to={"/category/womens"}>WOMENS</Link>
         <br />
-        <Link to={"/category/fashion/kids"}>KIDS</Link>
+        <Link to={"/category/kids"}>KIDS</Link>
       </Box>
     </div>
   );

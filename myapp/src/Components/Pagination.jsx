@@ -9,6 +9,7 @@ const Pagination = ({ total, handleChangefun }) => {
   let pages = paginationArray(total).map((ele, index) => {
     return (
       <button
+        key={index}
         className="pagination-page-button"
         onClick={() => handleChangefun(index + 1)}
       >
@@ -16,13 +17,9 @@ const Pagination = ({ total, handleChangefun }) => {
       </button>
     );
   });
-  // console.log(total)
+  console.log(total)
   // console.log(pages);
-  return (
-    <Box className="pagination-div">
-      {pages}
-    </Box>
-  );
+  return <Box className="pagination-div">{pages}</Box>;
 };
 
 export default Pagination;

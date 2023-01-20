@@ -7,29 +7,25 @@ import FashionProductCard from "../Components/FashionProductCard";
 import Pagination from "../Components/Pagination";
 import SkeletonFashionProduct from "../Components/SkeletonFashionProduct";
 
-const Mens = () => {
+const Womens = () => {
   const location = useLocation();
   const current_path = location.pathname.split("/")[2];
   const [mensData, setMensData] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [sortValue, setSortValue] = useState(false)
-  // const [sortParams, setSortParams] = useState("")
+  const [sortValue, setSortValue] = useState(false);
+
   // const [isLoading, setIsLoading] = useState(false)
 
-// =========> Page Handler Callback function
+  // =========> Page Handler Callback function
 
   const handleChange = (value) => {
     setCurrentPage(value);
-  }
+  };
 
+  //  ======> HandleSorting
 
-//  ======> HandleSorting
-
-const handleSorting = (e) => {
-
-}
-
+  const handleSorting = (e) => {};
 
   useEffect(() => {
     axios
@@ -49,9 +45,6 @@ const handleSorting = (e) => {
       });
   }, [current_path, currentPage]);
 
-
-
-
   return (
     <div>
       <Box className="mens-section">
@@ -64,11 +57,23 @@ const handleSorting = (e) => {
             </Box>
             <br />
             <Box>
-              <input onChange={()=>{setSortValue(!sortValue)}} name="sortValues"  type="radio" />
+              <input
+                onChange={() => {
+                  setSortValue(!sortValue);
+                }}
+                name="sortValues"
+                type="radio"
+              />
               <Text>Price High to Low</Text>
             </Box>
             <Box>
-              <input onChange={()=>{setSortValue(!sortValue)}} name="sortValues" type="radio" />
+              <input
+                onChange={() => {
+                  setSortValue(!sortValue);
+                }}
+                name="sortValues"
+                type="radio"
+              />
               <Text>Price Low to High</Text>
             </Box>
           </Box>
@@ -78,7 +83,7 @@ const handleSorting = (e) => {
           {mensData.length > 0 &&
             mensData.map((ele) => {
               return (
-                <Box key={ele._id} >
+                <Box key={ele._id}>
                   <FashionProductCard
                     image={ele.item_img}
                     brand={ele.item_brand}
@@ -102,4 +107,4 @@ const handleSorting = (e) => {
   );
 };
 
-export default Mens;
+export default Womens;

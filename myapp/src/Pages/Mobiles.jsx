@@ -1,41 +1,38 @@
-import { Box, Heading, Select, Text } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import FashionProductCard from "../Components/FashionProductCard";
 import Pagination from "../Components/Pagination";
-import SkeletonFashionProduct from "../Components/SkeletonFashionProduct";
 
-const Mens = () => {
+const Mobiles = () => {
+
   const location = useLocation();
   const current_path = location.pathname.split("/")[2];
-  const [mensData, setMensData] = useState([]);
+  const [MobilesData, setMobilesData] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [sortValue, setSortValue] = useState(false)
-  // const [sortParams, setSortParams] = useState("")
+  const [sortValue, setSortValue] = useState(false);
+
   // const [isLoading, setIsLoading] = useState(false)
 
-// =========> Page Handler Callback function
+  // =========> Page Handler Callback function
 
   const handleChange = (value) => {
     setCurrentPage(value);
-  }
+  };
 
+  //  ======> HandleSorting
 
-//  ======> HandleSorting
-
-const handleSorting = (e) => {
-
-}
-
+  const handleSorting = (e) => {};
 
   useEffect(() => {
     axios
       .get(`https://mybasket.onrender.com/category/${current_path}`)
       .then((res) => {
-        setTotalPages(res.data.length / 40);
+        setTotalPages(Math.floor(res.data.length / 25));
+        // console.log(res.data.length);
       });
   }, [current_path]);
 
@@ -45,11 +42,9 @@ const handleSorting = (e) => {
         `https://mybasket.onrender.com/category/${current_path}?page=${currentPage}&limit=${40}`
       )
       .then((res) => {
-        setMensData(res.data);
+        setMobilesData(res.data);
       });
   }, [current_path, currentPage]);
-
-
 
 
   return (
@@ -64,21 +59,33 @@ const handleSorting = (e) => {
             </Box>
             <br />
             <Box>
-              <input onChange={()=>{setSortValue(!sortValue)}} name="sortValues"  type="radio" />
+              <input
+                onChange={() => {
+                  setSortValue(!sortValue);
+                }}
+                name="sortValues"
+                type="radio"
+              />
               <Text>Price High to Low</Text>
             </Box>
             <Box>
-              <input onChange={()=>{setSortValue(!sortValue)}} name="sortValues" type="radio" />
+              <input
+                onChange={() => {
+                  setSortValue(!sortValue);
+                }}
+                name="sortValues"
+                type="radio"
+              />
               <Text>Price Low to High</Text>
             </Box>
           </Box>
         </Box>
 
         <Box>
-          {mensData.length > 0 &&
-            mensData.map((ele) => {
+          {MobilesData.length > 0 &&
+            MobilesData.map((ele) => {
               return (
-                <Box key={ele._id} >
+                <Box key={ele._id}>
                   <FashionProductCard
                     image={ele.item_img}
                     brand={ele.item_brand}
@@ -96,10 +103,10 @@ const handleSorting = (e) => {
         <br />
       </Box>
       <br />
-      <Pagination total={totalPages} handleChangefun={handleChange} />
+      <Pagination  total={totalPages} handleChangefun={handleChange} />
       {/* <SkeletonFashionProduct /> */}
     </div>
   );
 };
 
-export default Mens;
+export default Mobiles;

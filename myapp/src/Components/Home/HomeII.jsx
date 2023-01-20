@@ -8,6 +8,7 @@ import img4 from "../.././Assets/banner4.jpg";
 import img5 from "../.././Assets/banner5.png";
 import img6 from "../.././Assets/banner6.png";
 import MensMultiProdCarousel from "../Carousel/MensMultiProdCarousel";
+import MobilesMultiProdCarousel from "../Carousel/MobilesMultiProdCarousel";
 import WomensMultiProdCarousel from "../Carousel/WomenMultiProdCarousel";
 
 
@@ -61,6 +62,11 @@ const HomeII = () => {
         <Heading fontSize={"xl"}> Trending in Women's</Heading>
         <br />
         <WomensMultiProdCarousel/>
+        <br />
+        <Heading fontSize={"xl"}> Trending in Mobile Phones</Heading>
+        <br />
+        <MobilesMultiProdCarousel/>
+
       </Box>
     </div>
   );

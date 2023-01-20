@@ -1,26 +1,27 @@
 import { Box, Button, Text } from "@chakra-ui/react";
 import axios from "axios";
-import Carousel from "nuka-carousel";
+import Carousel from "nuka-carousel"
 import React, { useEffect, useState } from "react";
 import MultiCarouselItem from "../MultiCarouselItem";
 
-const MensMultiProdCarousel = () => {
-  const [mensData, setmensData] = useState([]);
+const MobilesMultiProdCarousel = () => {
 
-  useEffect(() => {
-    axios
-      .get("https://mybasket.onrender.com/category/mens?page=3&limit=20")
-      .then((res) => {
-        setmensData(res.data);
-        // console.log(res.data);
-      });
-  }, []);
+    const [mobileData, setmobileData] = useState([]);
+
+    useEffect(() => {
+      axios
+        .get("https://mybasket.onrender.com/category/mobiles?page=3&limit=20")
+        .then((res) => {
+          setmobileData(res.data);
+          console.log(res.data);
+        });
+    }, []);
 
   return (
     <div>
-      <Carousel renderBottomCenterControls={"disabled"} slidesToShow={7}>
-        {mensData &&
-          mensData.map((item) => {
+         <Carousel renderBottomCenterControls={"disabled"} slidesToShow={7}>
+        {mobileData &&
+          mobileData.map((item) => {
             return (
               <Box key={item._id}>
                 <MultiCarouselItem
@@ -35,7 +36,7 @@ const MensMultiProdCarousel = () => {
           })}
       </Carousel>
     </div>
-  );
-};
+  )
+}
 
-export default MensMultiProdCarousel;
+export default MobilesMultiProdCarousel

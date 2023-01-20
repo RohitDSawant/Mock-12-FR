@@ -51,7 +51,7 @@ const HomeI = () => {
             <Text as={"p"}>Grocery</Text>
           </Button>
         </Link>
-        <Link to="/category/Mobile&tablets">
+        <Link to="/category/mobiles">
           <Button>
             <img
               src="https://rukminim1.flixcart.com/fk-p-flap/128/128/image/e2268d56d09df684.png?q=100"
